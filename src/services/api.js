@@ -54,7 +54,7 @@ export const fetchLogin = async (password, username) => {
     try {
       const response = await axios.get(`${url}/api/products/${product_id}`,{
         headers:{
-          'Content-Type': 'application/jason',
+          'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         }
       });
@@ -71,9 +71,9 @@ export const fetchLogin = async (password, username) => {
   
   export const getProductos = async (skip, limit) => {
     try {
-      const response = await axios.get(`${BACKEND_URL}/ride/user?skip=${skip}&limit=${limit}`,{
+      const response = await axios.get(`${url}/ride/user?skip=${skip}&limit=${limit}`,{
         headers:{
-          'Content-Type': 'application/jason',
+          'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         }
       });
@@ -110,7 +110,7 @@ export const fetchLogin = async (password, username) => {
       const token = localStorage.getItem('token');
       await axios.delete(`${url}/api/products/${product_id}`,{
         headers:{
-          'Content-Type': 'application/jason',
+          'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         }
       });
